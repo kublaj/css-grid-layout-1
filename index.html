@@ -6,12 +6,16 @@
 
     <style>
         body {
-            font-size:100%;
-            padding: rem;
+            font-size: 100%;
+            font-family: Georgia, sans-serif;
+            padding: 2rem;
         }
 
         .wrapper {
+            margin: 0 auto;
+            max-width: 600px;
             display: grid;
+            border: 1px solid rgba(0, 0, 0, .2);
             grid-template-columns: 100px 100px 100px;
             grid-gap: 1rem;
             background-color: #fff;
@@ -19,11 +23,14 @@
         }
 
         .grid-item {
-            background-color: #444;
-            color: #fff;
+            background-color: #26c6da;
+            color: white;
             border-radius: 2px;
-            padding: 1em;
-            font-size: 1rem;
+            padding: 1rem;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 1.5rem;
+            text-align: center;
         }
 
         .a {
@@ -32,30 +39,35 @@
             grid-row-start: 1;
             grid-row-end: 2;
         }
+
         .b {
             grid-column-start: 2;
             grid-column-end: 3;
             grid-row-start: 2;
             grid-row-end: 3;
         }
+
         .c {
             grid-column-start: 3;
             grid-column-end: 4;
             grid-row-start: 2;
             grid-row-end: 3;
         }
+
         .d {
             grid-column-start: 1;
             grid-column-end: 2;
             grid-row-start: 1;
             grid-row-end: 2;
         }
+
         .e {
             grid-column-start: 1;
             grid-column-end: 2;
             grid-row-start: 2;
             grid-row-end: 3;
         }
+
         .f {
             grid-column-start: 3;
             grid-column-end: 4;
