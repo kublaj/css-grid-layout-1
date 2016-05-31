@@ -7,25 +7,19 @@
     <style>
         body {
             font-size: 100%;
-            font-family: Georgia, sans-serif;
             padding: 2rem;
+            font-family: sans-serif;
+            text-align: center;
         }
 
-        .wrapper {
-            margin: 0 auto;
-            max-width: 600px;
-            display: grid;
-            border: 1px solid rgba(0, 0, 0, .2);
-            grid-template-columns: 100px 100px 100px;
-            grid-gap: 1rem;
-            background-color: #fff;
-            color: #444;
+        h1{
+            font-size:1.825em;
         }
 
         .grid-item {
+            font-family: Georgia, sans-serif;
             background-color: #26c6da;
             color: white;
-            border-radius: 2px;
             padding: 1rem;
             font-weight: bold;
             font-style: italic;
@@ -33,59 +27,63 @@
             text-align: center;
         }
 
-        .a {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 1;
-            grid-row-end: 2;
+        .sidebar {
+            grid-area: sidebar;
         }
 
-        .b {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            grid-row-start: 2;
-            grid-row-end: 3;
+        .main {
+            grid-area: main;
         }
 
-        .c {
-            grid-column-start: 3;
-            grid-column-end: 4;
-            grid-row-start: 2;
-            grid-row-end: 3;
+        .header {
+            grid-area: header;
         }
 
-        .d {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 1;
-            grid-row-end: 2;
+        .footer {
+            grid-area: footer;
         }
 
-        .e {
-            grid-column-start: 1;
-            grid-column-end: 2;
-            grid-row-start: 2;
-            grid-row-end: 3;
+        .grid-wrapper {
+            border: 1px solid rgba(0, 0, 0, .2);
         }
 
-        .f {
-            grid-column-start: 3;
-            grid-column-end: 4;
-            grid-row-start: 1;
-            grid-row-end: 2;
+        .grid-wrapper {
+            display: grid;
+            grid-gap: 1em;
+            grid-template-areas: "header" "sidebar" "main" "footer";
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
+        @media only screen and (min-width: 500px) {
+            .grid-wrapper {
+                grid-template-columns: 20% auto;
+                grid-template-areas: "header header" "sidebar main" "footer footer";
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            .grid-wrapper {
+                grid-gap: 20px;
+                grid-template-columns: auto;
+                grid-template-areas: "header header header" "main sidebar" "footer footer footer";
+                max-width: 600px;
+            }
+        }
+
+
     </style>
 
 </head>
 <body>
-
-<div class="wrapper">
-    <div class="grid-item a">A</div>
-    <div class="grid-item b">B</div>
-    <div class="grid-item c">C</div>
-    <div class="grid-item d">D</div>
-    <div class="grid-item e">E</div>
-    <div class="grid-item f">F</div>
+<header>
+    <h1>Classic blog layout with the CSS Grid Layout Model</h1>
+</header>
+<div class="grid-wrapper">
+    <div class="grid-item header">Header</div>
+    <div class="grid-item sidebar">Sidebar</div>
+    <div class="grid-item main">Main content</div>
+    <div class="grid-item footer">Footer</div>
 </div>
 
 </body>
